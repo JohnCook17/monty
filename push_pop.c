@@ -48,6 +48,7 @@ void _push(stack_t **stack1, int line_number)
 		(*stack1)->prev = newnode;
 	*stack1 = newnode;
 	line_number++;
+	free(newnode);
 }
 /**
  * _pop - pops from the stack
