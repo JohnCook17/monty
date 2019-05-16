@@ -14,5 +14,4 @@ void _free(stack_t **head)
 		free(current);
 		current = next;
 	}
-	free(global.stack);
 }
