@@ -12,31 +12,31 @@ int main(int argc, char **argv)
 	char *line = NULL;
 	size_t len = 0;
 	ssize_t nread;
-
 	if (argv[1] == NULL && argc != 2)
 	{
 		perror("USAGE: monty file");
+		_free(&global.stack);
 		exit(EXIT_FAILURE);
 	}
 	global.line_number = 1;
 	if (argv[1] != NULL)
 	{
-		FILE *file = fopen(argv[1], "r");
-
-		if (file != NULL)
+		global.file = fopen(argv[1], "r");
+		if (global.file != NULL)
 		{
-			while ((nread = getline(&line, &len, file)) != -1)
+			while ((nread = getline(&line, &len, global.file)) != -1)
 			{
 				_strtok(line);
 				op();
 				global.line_number += 1;
 			}
-			fclose(file);
+			fclose(global.file);
 		}
 		else
 		{
 			perror("Error: Can't open file ");
 			perror(argv[1]);
+			_free(&global.stack);
 			exit(EXIT_FAILURE);
 		}
 	}
@@ -44,7 +44,10 @@ int main(int argc, char **argv)
 	{
 		perror("Error: Can't open file ");
 		perror(argv[1]);
+		_free(&global.stack);
 		exit(EXIT_FAILURE);
 	}
+	_free(&global.stack);
+	printf("bye\n");
 	return (0);
 }

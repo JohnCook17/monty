@@ -41,13 +41,14 @@ typedef struct instruction_s
  * @cmd: command
  * @line_number: the line number
  * @stack: the stack
- *
+ * @file: file to open
  */
 typedef struct globvar
 {
 	char *cmd[128];
 	int line_number;
 	stack_t *stack;
+	FILE *file;
 } gv;
 
 extern gv global;
@@ -62,4 +63,6 @@ void _pop();
 void _swap();
 void _add();
 void _nop();
+void _free();
+
 #endif

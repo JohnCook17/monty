@@ -29,11 +29,15 @@ void _push(stack_t **stack1, int line_number)
 	if (newnode == NULL)
 	{
 		perror("Error: malloc failed");
+		_free(global.stack);
+		fclose(global.file);
 		exit(EXIT_FAILURE);
 	}
 	if (!isnum(global.cmd[1]))
 	{
 		printf("L:%d usage: push integer\n", line_number);
+		_free(&global.stack);
+		fclose(global.file);
 		exit(EXIT_FAILURE);
 	}
 	newnode->n = atoi(global.cmd[1]);
