@@ -48,6 +48,7 @@ typedef struct globvar
 	char *line;
 	char *cmd[128];
 	int line_number;
+	stack_t *head;
 	stack_t *stack;
 	FILE *file;
 } gv;

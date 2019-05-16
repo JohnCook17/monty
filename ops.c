@@ -20,7 +20,7 @@ void (*op())()
 /*		printf("glob.cmd[1] = %s\n", global.cmd[0]);*/
 		if (strcmp(global.cmd[0], fun[i].opcode) == 0)
 		{
-			fun[i].f(&global.stack, global.line_number);
+			fun[i].f(&global.head, global.line_number);
 		}
 		i++;
 	}

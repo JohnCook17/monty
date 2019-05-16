@@ -44,8 +44,8 @@ int main(int argc, char **argv)
 		perror(argv[1]);
 		exit(EXIT_FAILURE);
 	}
-	free(global.line);
-/*	_free(&global.stack);
+	_free(&global.head);
+/*	_free(global.line); */
 	printf("bye\n");
-*/	return (0);
+	return (0);
 }

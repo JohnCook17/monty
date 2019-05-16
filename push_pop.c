@@ -24,19 +24,20 @@ int isnum(char *var)
  */
 void _push(stack_t **stack1, int line_number)
 {
-	stack_t *newnode = malloc(sizeof(stack_t));
+	stack_t *newnode;
+	newnode = global.stack = malloc(sizeof(stack_t));
 
 	if (newnode == NULL)
 	{
 		perror("Error: malloc failed");
 		fclose(global.file);
-		_free(&global.stack);
+		_free(&global.head);
 		exit(EXIT_FAILURE);
 	}
 	if (!isnum(global.cmd[1]))
 	{
 		printf("L:%d usage: push integer\n", line_number);
-		_free(&global.stack);
+		_free(&global.head);
 		fclose(global.file);
 		free(newnode);
 		exit(EXIT_FAILURE);
@@ -48,7 +49,7 @@ void _push(stack_t **stack1, int line_number)
 		(*stack1)->prev = newnode;
 	*stack1 = newnode;
 	line_number++;
-	free(newnode);
+/*	free(newnode);*/
 }
 /**
  * _pop - pops from the stack
