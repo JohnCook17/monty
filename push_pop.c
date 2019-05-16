@@ -38,6 +38,7 @@ void _push(stack_t **stack1, int line_number)
 		printf("L:%d usage: push integer\n", line_number);
 		_free(&global.stack);
 		fclose(global.file);
+		free(newnode);
 		exit(EXIT_FAILURE);
 	}
 	newnode->n = atoi(global.cmd[1]);
