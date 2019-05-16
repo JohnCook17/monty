@@ -17,5 +17,5 @@ void _strtok(char *line)
 		i++;
 	}
 	global.cmd[i] = NULL;
-	free(line);
+	/*free(line);*/
 }

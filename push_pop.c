@@ -29,8 +29,8 @@ void _push(stack_t **stack1, int line_number)
 	if (newnode == NULL)
 	{
 		perror("Error: malloc failed");
-		_free(global.stack);
 		fclose(global.file);
+		_free(&global.stack);
 		exit(EXIT_FAILURE);
 	}
 	if (!isnum(global.cmd[1]))

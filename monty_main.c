@@ -15,7 +15,6 @@ int main(int argc, char **argv)
 	if (argv[1] == NULL && argc != 2)
 	{
 		perror("USAGE: monty file");
-		/*_free(&global.stack);*/
 		exit(EXIT_FAILURE);
 	}
 	global.line_number = 1;
@@ -45,6 +44,7 @@ int main(int argc, char **argv)
 		perror(argv[1]);
 		exit(EXIT_FAILURE);
 	}
+	free(global.line);
 	_free(&global.stack);
 	printf("bye\n");
 	return (0);
