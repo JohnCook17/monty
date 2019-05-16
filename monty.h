@@ -45,6 +45,7 @@ typedef struct instruction_s
  */
 typedef struct globvar
 {
+	char *line;
 	char *cmd[128];
 	int line_number;
 	stack_t *stack;
