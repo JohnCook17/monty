@@ -1,5 +1,9 @@
 #include "monty.h"
-
+/**
+ * _pall - print all values in the stack
+ * @head: the head of the stack to print
+ * @line_number: not really used
+ */
 void _pall(stack_t **head, int line_number)
 {
 	stack_t *current = *head;
@@ -9,10 +13,12 @@ void _pall(stack_t **head, int line_number)
 		printf("%d\n", current->n);
 		current = current->next;
 	}
-	printf("PRINT OP Line number = %d\n", line_number);
+	line_number++;
 }
-
-void _pint()
+/**
+ * _pint - print a given int
+ */
+void _pint(void)
 {
 	printf("print int \n");
 }
