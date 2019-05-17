@@ -64,7 +64,6 @@ void _pop(stack_t **stack, int line_number)
 		fprintf(stderr, "L%d: can't pop an empty stack", line_number);
                 _free(&global.head);
                 fclose(global.file);
-                free(newnode);
                 exit(EXIT_FAILURE);
 	}
 	*stack = (*stack)->next;
