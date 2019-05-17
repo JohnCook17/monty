@@ -17,7 +17,6 @@ int main(int argc, char **argv)
 		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
-	global.line_number = 1;
 	if (argv[1] != NULL)
 	{
 		global.file = fopen(argv[1], "r");
