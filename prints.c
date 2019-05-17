@@ -20,5 +20,10 @@ void _pall(stack_t **head, int line_number)
  */
 void _pint(void)
 {
-	printf("print int \n");
+	if (!global.stack->n)
+	{
+		fprintf(stderr, "L%d: can't pint, stack empty\n", global.line_number);
+	}
+	else
+		printf("%d\n", global.stack->n);
 }
