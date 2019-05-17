@@ -56,6 +56,19 @@ void _mult(stack_t **stack, int line_number)
         tmp->next->n *= tmp->n;
         free (tmp);
 }
+void _mod(stack_t **stack, int line_number)
+{
+        stack_t *tmp = *stack;
+
+        if (*stack == NULL || !(*stack)->next)
+        {
+                fprintf(stderr, "L%d: can't mod, stack too short\n", line_number);
+                exit(EXIT_FAILURE);
+        }
+        *stack = (*stack)->next;
+        tmp->next->n %= tmp->n;
+        free (tmp);
+}
 /**
  * _nop - no op
  * @stack1: stack to do nothing with

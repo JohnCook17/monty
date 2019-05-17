@@ -69,5 +69,5 @@ void _free();
 void _sub();
 void _div();
 void _mult();
-
+void _mod();
 #endif

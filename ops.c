@@ -15,6 +15,7 @@ void (*op())()
 		{"sub", _sub},
 		{"div", _div},
 		{"mul", _mult},
+		{"mod", _mod},
 		{NULL, NULL}
 	};
 	while (fun[i].opcode)
