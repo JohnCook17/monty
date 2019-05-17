@@ -74,9 +74,15 @@ void _pop(stack_t **stack, int line_number)
  * @stack1: stack to swap from
  * @line_number: not really used
  */
-void _swap(stack_t **stack1, int line_number)
+void _swap(stack_t **stack, int line_number)
 {
-	(void)(stack1);
-	(void)(line_number);
-	printf("swap \n");
+	int num = 0;
+	if (*stack == NULL || !(*stack)->next)
+	{
+		fprintf(stderr, "L%d: can't swap, stack too short\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	(*stack)->n = num;
+	(*stack)->n = (*stack)->next->n;
+	(*stack)->next->n = (*stack)->n;
 }
