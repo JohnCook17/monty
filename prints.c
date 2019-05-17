@@ -23,6 +23,8 @@ void _pint(void)
 	if (!global.stack->n)
 	{
 		fprintf(stderr, "L%d: can't pint, stack empty\n", global.line_number);
+		fclose(global.file);
+		exit(EXIT_FAILURE);
 	}
 	else
 		printf("%d\n", global.stack->n);

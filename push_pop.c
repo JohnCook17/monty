@@ -55,11 +55,22 @@ void _push(stack_t **stack1, int line_number)
  * @stack1: stack to pop from
  * @line_number: not really used
  */
-void _pop(stack_t **stack1, int line_number)
+void _pop(stack_t **stack, int line_number)
 {
-	(void)(stack1);
-	(void)(line_number);
-	printf("pop \n");
+	stack_t *tmp = *stack;
+
+	if (*stack == NULL)
+	{
+		fprintf(stderr, "L%d: can't pop an empty stack", line_number);
+                _free(&global.head);
+                fclose(global.file);
+                free(newnode);
+                exit(EXIT_FAILURE);
+	}
+	*stack = (*stack)->next;
+	free(tmp);
+	if (stack != NULL)
+		(*stack)->prev = NULL;
 }
 /**
  * _swap - swaps two values in the stack

@@ -12,6 +12,7 @@ int main(int argc, char **argv)
 	size_t len = 0;
 	ssize_t nread;
 
+	global.line_number = 0;
 	if (argv[1] == NULL && argc != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
