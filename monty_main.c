@@ -14,7 +14,7 @@ int main(int argc, char **argv)
 
 	if (argv[1] == NULL && argc != 2)
 	{
-		perror("USAGE: monty file");
+		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
 	global.line_number = 1;
