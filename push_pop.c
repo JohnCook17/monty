@@ -29,7 +29,7 @@ void _push(stack_t **stack1, int line_number)
 
 	if (newnode == NULL)
 	{
-		perror("Error: malloc failed");
+		fprintf(stderr, "Error: malloc failed");
 		fclose(global.file);
 		_free(&global.head);
 		exit(EXIT_FAILURE);
@@ -49,7 +49,6 @@ void _push(stack_t **stack1, int line_number)
 		(*stack1)->prev = newnode;
 	*stack1 = newnode;
 	line_number++;
-/*	free(newnode);*/
 }
 /**
  * _pop - pops from the stack

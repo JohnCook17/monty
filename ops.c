@@ -18,6 +18,13 @@ void (*op())()
 	{
 		if (strcmp(global.cmd[0], fun[i].opcode) == 0)
 		{
+			if (strcmp(global.cmd[0], "push") == 0 && global.cmd[1] == NULL)
+			{
+				fprintf(stderr, "L%d: usage: push integer\n", global.line_number);
+				fclose(global.file);
+				_free(&global.head);
+				exit(EXIT_FAILURE);
+			}
 			fun[i].f(&global.head, global.line_number);
 			break;
 		}
