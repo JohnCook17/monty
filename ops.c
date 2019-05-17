@@ -12,6 +12,9 @@ void (*op())()
 		{"swap", _swap},
 		{"add", _add},
 		{"nop", _nop},
+		{"sub", _sub},
+		{"div", _div},
+		{"mul", _mult},
 		{NULL, NULL}
 	};
 	while (fun[i].opcode)

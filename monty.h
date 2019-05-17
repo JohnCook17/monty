@@ -66,5 +66,8 @@ void _swap();
 void _add();
 void _nop();
 void _free();
+void _sub();
+void _div();
+void _mult();
 
 #endif
