@@ -10,12 +10,8 @@ void _strtok(char *line)
 	unsigned int i = 0;
 
 	input = strtok(line, delim);
-	while (input)
+	while (input != NULL && i < 8)
 	{
-		if (input == NULL)
-		{
-			continue;
-		}
 		global.cmd[i] = input;
 		input = strtok(NULL, delim);
 		i++;

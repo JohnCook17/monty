@@ -26,7 +26,8 @@ int main(int argc, char **argv)
 			while ((nread = getline(&global.line, &len, global.file)) != -1)
 			{
 				_strtok(global.line);
-				op();
+				if (global.cmd[0])
+					op();
 				global.line_number += 1;
 			}
 			fclose(global.file);
