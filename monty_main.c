@@ -33,15 +33,13 @@ int main(int argc, char **argv)
 		}
 		else
 		{
-			perror("Error: Can't open file ");
-			perror(argv[1]);
+			fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 			exit(EXIT_FAILURE);
 		}
 	}
 	else
 	{
-		perror("Error: Can't open file ");
-		perror(argv[1]);
+		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
 	_free(&global.head);
