@@ -36,7 +36,7 @@ void _push(stack_t **stack1, int line_number)
 	}
 	if (!isnum(global.cmd[1]))
 	{
-		printf("L:%d usage: push integer\n", line_number);
+		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		_free(&global.head);
 		fclose(global.file);
 		free(newnode);

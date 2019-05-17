@@ -12,6 +12,10 @@ void _strtok(char *line)
 	input = strtok(line, delim);
 	while (input)
 	{
+		if (input == NULL)
+		{
+			continue;
+		}
 		global.cmd[i] = input;
 		input = strtok(NULL, delim);
 		i++;
