@@ -46,6 +46,5 @@ int main(int argc, char **argv)
 	}
 	_free(&global.head);
 /*	_free(global.line); */
-	printf("bye\n");
 	return (0);
 }
